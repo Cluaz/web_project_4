@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Around The U.S.</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="logo" src="./images/logo.svg" />
+        <hr class="header__line" />
+      </header>
+
+      <main class="content">
+        <section class="profile">
+          <div class="profile__container">
+            <div class="profile__image-container">
+              <img src="./images/image.jpg" class="profile__image" />
+            </div>
+            <div class="profile__info">
+              <div class="profile__title">
+                <h1 class="profile__name">Jacques Costeau</h1>
+                <button class="button button_edit">
+                  <img class="button__image" src="./images/pencil.svg" />
+                </button>
+              </div>
+              <p class="profile__about">Explorar</p>
+            </div>
+          </div>
+          <button class="button button_add">
+            <img class="button__image" src="./images/plus.svg" />
+          </button>
+        </section>
+
+        <section class="popup">
+          <button class="button button_toggle">
+            <img class="button__toggle-image" src="./images/toggle.svg" />
+          </button>
+          <form class="popup__container">
+            <h3 class="popup__header">Editar Perfil</h3>
+            <fieldset class="popup__input-container">
+              <label for="name" class="popup__label">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Nome"
+                  required
+                  class="popup__item"
+                />
+              </label>
+              <label for="about" class="popup__label">
+                <input
+                  type="text"
+                  id="about"
+                  name="about"
+                  placeholder="Sobre mim"
+                  required
+                  class="popup__item"
+                />
+              </label>
+            </fieldset>
+            <button type="submit" class="button button_save">Salvar</button>
+          </form>
+        </section>
+
+        <section class="cards">
+          <div class="card">
+            <img class="card__image" src="./images/vale de yosemite.jpg" />
+            <div class="card__content">
+              <h2 class="card__title">Vale de Yosemite</h2>
+              <button class="button button_heart">
+                <img
+                  src="./images/heart.svg"
+                  class="button__image button__heart-image"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/lago louise.png" />
+            <div class="card__content">
+              <h2 class="card__title">Lago Louise</h2>
+              <button class="button button_heart">
+                <img src="./images/heart.svg" class="button__image" />
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/Montanhas Care.png" />
+            <div class="card__content">
+              <h2 class="card__title">Montanhas Care ...</h2>
+              <button class="button button_heart">
+                <img src="./images/heart.svg" class="button__image" />
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/latemar.png" />
+            <div class="card__content">
+              <h2 class="card__title">Latemar</h2>
+              <button class="button button_heart">
+                <img src="./images/heart.svg" class="button__image" />
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/vanoise national park.png" />
+            <div class="card__content">
+              <h2 class="card__title">Vanoise National Park</h2>
+              <button class="button button_heart">
+                <img src="./images/heart.svg" class="button__image" />
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/lado di braies.png" />
+            <div class="card__content">
+              <h2 class="card__title">Lago di Braies</h2>
+              <button class="button button_heart">
+                <img src="./images/heart.svg" class="button__image" />
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">&copy 2022 Around The U.S.</p>
+      </footer>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

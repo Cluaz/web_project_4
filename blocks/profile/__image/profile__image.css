@@ -1,0 +1,6 @@
+.profile__image {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+.button_add {
+  justify-self: end;
+  width: 150px;
+  height: 50px;
+  padding: 14px 64px;
+  border: 2px solid #fff;
+  background-color: black;
+}
+
+@media screen and (max-width: 656px) {
+  .button_add {
+    width: 282px;
+  }
+}

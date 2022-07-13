@@ -1,0 +1,15 @@
+.popup__header {
+  align-self: flex-start;
+  margin-bottom: 24.25px;
+  font-size: 24px;
+  height: 23px;
+  font-weight: 900;
+  color: #000;
+}
+
+@media screen and (max-width: 618px) {
+  .popup__header {
+    margin-bottom: 45px;
+    font-size: 18px;
+  }
+}

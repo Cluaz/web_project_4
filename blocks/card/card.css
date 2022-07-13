@@ -1,0 +1,20 @@
+.card {
+  width: 282px;
+  height: 361px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.card:nth-child(odd) {
+  justify-self: flex-end;
+}
+
+.card:nth-child(even) {
+  justify-self: flex-start;
+}
+
+@media screen and (max-width: 620px) {
+  .card:nth-child(n) {
+    justify-self: center;
+  }
+}
