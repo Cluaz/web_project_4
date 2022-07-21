@@ -10,6 +10,7 @@
   margin-top: 5px;
   font-size: 14px;
   font-family: inherit;
+  color: #000;
 }
 
 .popup__item:focus {

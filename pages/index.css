@@ -15,6 +15,7 @@
 @import url(../blocks/button/_edit/button_edit.css);
 @import url(../blocks/button/_add/button_add.css);
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/button/_toggle/button_toggle.css);
 @import url(../blocks/button/__toggle-image/button_toggle-image.css);
 @import url(../blocks/popup/__header/popup__header.css);
