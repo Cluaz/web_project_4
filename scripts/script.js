@@ -1,49 +1,34 @@
-// Vamos descobrir o formulário no DOM
-let popup = document.querySelector(".popup");
-let profileEdit = document.querySelector(".button_edit");
-let profileToggle = document.querySelector(".button_toggle");
+const popup = document.querySelector(".popup");
+const profileEdit = document.querySelector(".button_edit");
+const profileToggle = document.querySelector(".button_toggle");
 
-function openPopup() {
-  popup.classList.add("popup_opened");
+function togglePopup() {
+  popup.classList.toggle("popup_opened");
 }
 
-profileEdit.addEventListener("click", openPopup);
+profileEdit.addEventListener("click", togglePopup);
 
-function closePopup() {
-  popup.classList.remove("popup_opened");
-}
+profileToggle.addEventListener("click", togglePopup);
 
-profileToggle.addEventListener("click", closePopup);
+const formElement = document.querySelector(".popup__container");
 
-let formElement = document.querySelector(".popup__container"); // Use o método querySelector()
+const profileFormSubmit = formElement.querySelector(".button_save");
 
-// Em seguida vem o handler do submit
-// ainda não vai enviar para lugara nenhum
-let profileFormSubmit = formElement.querySelector(".button_save");
+profileFormSubmit.onclick = togglePopup;
 
-// Observe que o nome da função começa com um verbo
-// e descreve exatamente o que a função faz
 function handleProfileFormSubmit(evt) {
-  // Esta linha impede o navegador
-  // de enviar o formulário da forma padrão.
   evt.preventDefault();
   // Fazendo isso, podemos definir nossa própria forma de enviar o formulário.
   // Explicaremos em mais detalhes posteriormente.
 
-  // Vamos encontrar os campos de formulário do DOM
-  let nameInput = formElement.querySelector("#name"); // Use querySelector()
-  let jobInput = formElement.querySelector("#about"); // Use querySelector()
+  const nameInput = document.querySelector("#name");
+  const aboutInput = document.querySelector("#about");
 
-  // Selecione elementos onde os valores de campo serão inseridos
-  let profileName = formElement.querySelector(".profile__name");
-  let profileAbout = formElement.querySelector(".profile__about");
+  const profileName = document.querySelector(".profile__name");
+  const profileAbout = document.querySelector(".profile__about");
 
-  // Insira novos valores usando textContent
-  // propriedade do método querySelector()
   profileName.textContent = nameInput.value;
-  profileAbout.textContent = jobInput.value;
+  profileAbout.textContent = aboutInput.value;
 }
 
-// Conecte o handler ao formulário:
-// ele vai observar o evento de submit
-formElement.addEventListener("submit", handleProfileFormSubmit + closePopup);
+formElement.addEventListener("submit", handleProfileFormSubmit);

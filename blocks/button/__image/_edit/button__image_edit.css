@@ -1,0 +1,11 @@
+.button__image_edit {
+  width: 10px;
+  height: 10px;
+}
+
+@media screen and (max-width: 658px) {
+  .button__image_edit {
+    width: 7.5px;
+    height: 7.5px;
+  }
+}

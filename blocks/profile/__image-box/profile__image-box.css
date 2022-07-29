@@ -1,0 +1,14 @@
+.profile__image-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+}
+
+@media screen and (max-width: 656px) {
+  .profile__image-box {
+    margin-bottom: 30px;
+  }
+}
+
+/*O '__image-container' não é um modificador, mas um elemento do popup, assim para não haver confusão alterei esse e o nome dos outros mencionados para ficar menos confuso.*/
