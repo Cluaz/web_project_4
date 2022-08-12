@@ -15,4 +15,6 @@
 
 .popup__item:focus {
   outline-color: #0d99ff;
+  color: #000;
+  opacity: 10;
 }

@@ -1,15 +1,24 @@
 .card {
+  position: relative;
   width: 282px;
   height: 361px;
   background-color: #fff;
   border-radius: 10px;
 }
 
-.card:nth-child(odd) {
-  justify-self: flex-end;
+.card:hover {
+  cursor: pointer;
 }
 
 .card:nth-child(even) {
+  justify-self: flex-end;
+}
+
+.card:nth-child(odd) {
+  justify-self: flex-start;
+}
+
+.card:only-of-type {
   justify-self: flex-start;
 }
 

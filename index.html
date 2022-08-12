@@ -49,15 +49,15 @@
           </button>
         </div>
 
-        <div class="popup">
-          <button class="button button_toggle">
+        <div class="popup" id="edit-profile">
+          <button class="button button_toggle" id="profile-toggle">
             <img
               class="button__image button__image_toggle"
               src="./images/toggle.svg"
               alt="close"
             />
           </button>
-          <form class="popup__container">
+          <form class="popup__container" id="edit-profile-form">
             <h3 class="popup__header">Editar Perfil</h3>
             <fieldset class="popup__input-form">
               <label for="name" class="popup__label">
@@ -81,109 +81,99 @@
                 />
               </label>
             </fieldset>
-            <button type="submit" class="button button_save">Salvar</button>
+            <button type="submit" class="button button_save" id="save-profile">
+              Salvar
+            </button>
+          </form>
+        </div>
+
+        <div class="popup" id="popup-add-card">
+          <button class="button button_toggle" id="add-card-toggle">
+            <img
+              class="button__image button__image_toggle"
+              src="./images/toggle.svg"
+              alt="close"
+            />
+          </button>
+          <form class="popup__container" id="add-card-form">
+            <h3 class="popup__header">Novo Local</h3>
+            <fieldset class="popup__input-form">
+              <label for="title" class="popup__label">
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Título"
+                  required
+                  class="popup__item"
+                />
+              </label>
+              <label for="image" class="popup__label">
+                <input
+                  type="url"
+                  id="image"
+                  name="image"
+                  placeholder="Link da imagem"
+                  required
+                  class="popup__item"
+                />
+              </label>
+            </fieldset>
+            <button
+              type="submit"
+              class="button button_save"
+              id="create-card-button"
+            >
+              Criar
+            </button>
           </form>
         </div>
 
         <div class="cards">
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/vale-de-yosemite.jpg"
-              alt="paisage"
-            />
-            <div class="card__content">
-              <h2 class="card__title">Vale de Yosemite</h2>
-              <button class="button button_heart">
+          <template id="card-template">
+            <div class="card">
+              <img class="card__image" src="" alt="paisage" />
+              <button type="" class="button button_delete" id="delete-card">
                 <img
-                  src="./images/heart.svg"
-                  class="button__image button__image_heart"
-                  alt="like"
+                  src="./images/delete.svg"
+                  class="button__image button__image_delete"
+                  alt="bin"
                 />
               </button>
+              <div class="card__content">
+                <h2 class="card__title"></h2>
+                <button class="button button_like">
+                  <img
+                    src="./images/like.svg"
+                    class="button__image button__image_like"
+                    alt="like"
+                  />
+                </button>
+              </div>
+
+              <div class="popup" id="popup-card">
+                <div
+                  class="popup__container popup__container_card"
+                  id="popup-card-container"
+                >
+                  <button class="button button_toggle-card" id="card-toggle">
+                    <img
+                      class="button__image button__image_toggle-card"
+                      src="./images/toggle.svg"
+                      alt="close"
+                    />
+                  </button>
+                  <img
+                    src=""
+                    class="popup__image"
+                    id="popup-image"
+                    alt="paisage"
+                  />
+                  <h3 class="popup__title" id="popup-title"></h3>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/lago-louise.png"
-              alt="paisage"
-            />
-            <div class="card__content">
-              <h2 class="card__title">Lago Louise</h2>
-              <button class="button button_heart">
-                <img
-                  src="./images/heart.svg"
-                  class="button__image button__image_heart"
-                  alt="like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/Montanhas-Care.png"
-              alt="paisage"
-            />
-            <div class="card__content">
-              <h2 class="card__title">Montanhas Care ...</h2>
-              <button class="button button_heart">
-                <img
-                  src="./images/heart.svg"
-                  class="button__image button__image_heart"
-                  alt="like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card__image" src="./images/latemar.png" alt="paisage" />
-            <div class="card__content">
-              <h2 class="card__title">Latemar</h2>
-              <button class="button button_heart">
-                <img
-                  src="./images/heart.svg"
-                  class="button__image button__image_heart"
-                  alt="like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/vanoise-national-park.png"
-              alt="paisage"
-            />
-            <div class="card__content">
-              <h2 class="card__title">Vanoise National Park</h2>
-              <button class="button button_heart">
-                <img
-                  src="./images/heart.svg"
-                  class="button__image button__image_heart"
-                  alt="like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="./images/lado-di-braies.png"
-              alt="paisage"
-            />
-            <div class="card__content">
-              <h2 class="card__title">Lago di Braies</h2>
-              <button class="button button_heart">
-                <img
-                  src="./images/heart.svg"
-                  class="button__image button__image_heart"
-                  alt="like"
-                />
-              </button>
-            </div>
-          </div>
+          </template>
         </div>
       </main>
 

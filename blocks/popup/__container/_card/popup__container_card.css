@@ -1,0 +1,11 @@
+.popup__container_card {
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  max-width: 75vw;
+  max-height: calc(75vh + 78.6px);
+  transform: translate(-50%, -50%);
+  background: none;
+  padding: 0;
+  border-radius: 0px;
+}
