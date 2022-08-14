@@ -45,12 +45,13 @@ function toggleAddCardPopup() {
 cardAdd.addEventListener("click", toggleAddCardPopup);
 popupAddCardToggle.addEventListener("click", toggleAddCardPopup);
 
+//eu preferi utilizar as classes quando possível, remover as id's que não estavam sendo utilizadas e transformar a que restou em classe também, pois ao usar o removeAttribute as outras funções não estavam funcionando.
 function addCard(imageInput, titleInput) {
   const cardElement = cardTemplate.content.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardLike = cardElement.querySelector(".button_like");
   const cardDelete = cardElement.querySelector(".button_delete");
-  const popupCardToggle = cardElement.querySelector("#card-toggle");
+  const popupCardToggle = cardElement.querySelector(".popup_card");
 
   cardImage.src = imageInput;
   cardImage.alt = titleInput;
@@ -88,7 +89,7 @@ function toggleCardPopup() {
 function handleCardPopup(evt) {
   evt.preventDefault();
   const cardElement = evt.target.closest(".card");
-  const cardPopup = cardElement.querySelector("#popup-card");
+  const cardPopup = cardElement.querySelector("[name='popup-card']");
   cardPopup.classList.toggle("popup_opened");
 }
 
