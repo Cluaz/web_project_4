@@ -31,7 +31,7 @@ function handleProfileFormSubmit(evt) {
 formProfileElement.addEventListener("submit", handleProfileFormSubmit);
 
 const cardsContainer = document.querySelector(".cards");
-const cardTemplate = document.querySelector("#card-template");
+const cardTemplate = document.querySelector(".template");
 
 const popupAddCard = document.querySelector("#popup-add-card");
 const cardAdd = document.querySelector(".button_add");
@@ -128,8 +128,8 @@ function likeCard(evt) {
   const srcImage = likeImage.getAttribute("src");
 
   srcImage.includes("./images/like.svg")
-    ? likeImage.setAttribute("src", "../images/like_active.svg")
-    : likeImage.setAttribute("src", "../images/like.svg");
+    ? likeImage.setAttribute("src", "./images/like_active.svg")
+    : likeImage.setAttribute("src", "./images/like.svg");
 
   return likeImage;
 }
@@ -137,4 +137,6 @@ function likeCard(evt) {
 function deleteCard(evt) {
   const cardElement = evt.target.closest(".card");
   cardElement.remove();
+  cardElement.removeEventListener("click", handleCardPopup, false);
+  cardElement.removeEventListener("click", likeCard, false);
 }
