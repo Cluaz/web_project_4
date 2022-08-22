@@ -15,6 +15,11 @@ const profileFormSubmit = formProfileElement.querySelector("#save-profile");
 
 profileFormSubmit.onclick = toggleProfilePopup;
 
+let profileName = document.querySelector(".profile__name");
+let profileAbout = document.querySelector(".profile__about");
+profileName.textContent = "jacques Costeau";
+profileAbout.textContent = "Explorer";
+
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
@@ -45,13 +50,12 @@ function toggleAddCardPopup() {
 cardAdd.addEventListener("click", toggleAddCardPopup);
 popupAddCardToggle.addEventListener("click", toggleAddCardPopup);
 
-//eu preferi utilizar as classes quando possível, remover as id's que não estavam sendo utilizadas e transformar a que restou em classe também, pois ao usar o removeAttribute as outras funções não estavam funcionando.
 function addCard(imageInput, titleInput) {
   const cardElement = cardTemplate.content.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardLike = cardElement.querySelector(".button_like");
   const cardDelete = cardElement.querySelector(".button_delete");
-  const popupCardToggle = cardElement.querySelector(".popup_card");
+  const popupImageToggle = cardElement.querySelector(".popup_image");
 
   cardImage.src = imageInput;
   cardImage.alt = titleInput;
@@ -61,8 +65,8 @@ function addCard(imageInput, titleInput) {
   cardElement.querySelector(".popup__title").textContent = titleInput;
 
   cardLike.addEventListener("click", likeCard);
-  cardImage.addEventListener("click", handleCardPopup);
-  popupCardToggle.addEventListener("click", handleCardPopup);
+  cardImage.addEventListener("click", handleImagePopup);
+  popupImageToggle.addEventListener("click", handleImagePopup);
   cardDelete.addEventListener("click", deleteCard);
 
   return cardElement;
@@ -82,15 +86,15 @@ function handleCardFormSubmit(evt) {
 
 cardFormSubmit.addEventListener("submit", handleCardFormSubmit);
 
-function toggleCardPopup() {
-  cardPopup.classList.toggle("popup_opened");
+function toggleImagePopup() {
+  imagePopup.classList.toggle("popup_opened");
 }
 
-function handleCardPopup(evt) {
+function handleImagePopup(evt) {
   evt.preventDefault();
   const cardElement = evt.target.closest(".card");
-  const cardPopup = cardElement.querySelector("[name='popup-card']");
-  cardPopup.classList.toggle("popup_opened");
+  const imagePopup = cardElement.querySelector(".popup_image");
+  imagePopup.classList.toggle("popup_opened");
 }
 
 const initialCards = [
@@ -138,6 +142,6 @@ function likeCard(evt) {
 function deleteCard(evt) {
   const cardElement = evt.target.closest(".card");
   cardElement.remove();
-  cardElement.removeEventListener("click", handleCardPopup, false);
+  cardElement.removeEventListener("click", handleImagePopup, false);
   cardElement.removeEventListener("click", likeCard, false);
 }
