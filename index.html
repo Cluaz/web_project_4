@@ -59,7 +59,7 @@
               alt="close"
             />
           </button>
-          <form class="popup__container" id="edit-profile-form">
+          <form class="popup__container popup__form" id="edit-profile-form">
             <h3 class="popup__header">Editar Perfil</h3>
             <fieldset class="popup__input-form">
               <label for="name" class="popup__label">
@@ -69,8 +69,11 @@
                   name="name"
                   placeholder="Nome"
                   required
+                  minlength="2"
+                  maxlength="40"
                   class="popup__item"
                 />
+                <span class="popup__input-error name-error"></span>
               </label>
               <label for="about" class="popup__label">
                 <input
@@ -79,8 +82,11 @@
                   name="about"
                   placeholder="Sobre mim"
                   required
+                  minlength="2"
+                  maxlength="200"
                   class="popup__item"
                 />
+                <span class="popup__input-error about-error"></span>
               </label>
             </fieldset>
             <button type="submit" class="button button_save" id="save-profile">
@@ -97,7 +103,7 @@
               alt="close"
             />
           </button>
-          <form class="popup__container" id="add-card-form">
+          <form class="popup__container popup__form" id="add-card-form">
             <h3 class="popup__header">Novo Local</h3>
             <fieldset class="popup__input-form">
               <label for="title" class="popup__label">
@@ -107,8 +113,11 @@
                   name="title"
                   placeholder="Titulo"
                   required
+                  minlength="2"
+                  maxlength="30"
                   class="popup__item"
                 />
+                <span class="popup__input-error title-error"></span>
               </label>
               <label for="image" class="popup__label">
                 <input
@@ -119,6 +128,7 @@
                   required
                   class="popup__item"
                 />
+                <span class="popup__input-error image-error"></span>
               </label>
             </fieldset>
             <button
@@ -178,5 +188,6 @@
     </div>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
